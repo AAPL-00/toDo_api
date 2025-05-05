@@ -2,7 +2,7 @@ from rest_framework import serializers
 from user.models import CustomUser
 from django.contrib.auth.password_validation import validate_password
 
-class UserSerializer(serializers.Serializer):
+class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True, style={'input_type': 'password'})
 
     class Meta:
